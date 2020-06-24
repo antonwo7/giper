@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="task1" class="task">
+        <h1>Task1</h1>
+        <input name="op" value="" placeholder="Тип операции" />
+        <input name="number" value="" placeholder="Число" />
+        <button>Старт</button>
+    </div>
+    <div id="task2" class="task">
+        <h1>Task2</h1>
+        <input name="str" value="" placeholder="Строка" />
+        <button>Старт</button>
+    </div>
+    <div id="task3" class="task">
+        <h1>Task3</h1>
+        Макс. значение<input name="max" value="700"/>
+        <input name="val" value="" placeholder="Значение" />
+        <button>Старт</button>
+        <div class="gauge">
+            <div class="scale">
+                <div class="indicator"></div>
+            </div>
+            <div class="current">
+                <div class="value">350</div>
+            </div>
+            <div class="holder"></div>
+            <div class="range">
+                <span class="from">0</span>
+                <span class="to">700</span>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

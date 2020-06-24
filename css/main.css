@@ -1,0 +1,97 @@
+html {
+    --max: 700;
+    --value: 350;
+    --gauge-width: 150px;
+    --gauge-background: #41b7d8;
+    --gauge-color: #fff;
+    --indicator-height: 6px;
+    --rotate: calc( var(--value) / ( var(--max) / 180) * 1deg - 90deg);
+}
+
+body {
+    color: #66666d;
+}
+
+.task {
+    margin-bottom: 70px;
+}
+
+.task h1 {
+    border-bottom: 1px dotted;
+}
+
+.gauge {
+    width: var(--gauge-width);
+    position: relative;
+    margin: 60px;
+    font-size:14px;
+}
+
+.gauge .scale {
+    border-top-left-radius: var(--gauge-width);
+    border-top-right-radius: var(--gauge-width);
+    background: var(--gauge-background);
+    width: var(--gauge-width);
+    height: calc(var(--gauge-width) / 2);
+    position: relative;
+    overflow: hidden;
+}
+
+.gauge .scale .indicator {
+    position: absolute;
+    bottom: 0;
+    background: var(--gauge-color);
+    height: calc(var(--gauge-width) / 2 - 10px);
+    width: var(--indicator-height);
+    border-top-left-radius: calc(var(--indicator-height) / 2);
+    border-top-right-radius: calc(var(--indicator-height) / 2);
+    left: 50%;
+    transform: translateX(-50%) rotate(var(--rotate));
+    transform-origin: bottom center;
+}
+
+.gauge .range {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    top: 10px;
+}
+
+.gauge .range .from, .gauge .range .to {
+    position: absolute;
+    bottom: 0;
+}
+
+.gauge .range .from {
+    left: 0;
+}
+
+.gauge .range .to {
+    right: 0;
+}
+
+.gauge .current {
+    width: var(--gauge-width);
+    position: absolute;
+}
+
+.gauge .current .value {
+    position: absolute;
+    bottom: 0;
+    height: calc(var(--gauge-width)/2 + 25px);
+    left: 50%;
+    transform: translateX(-50%) rotate(var(--rotate));
+    transform-origin: bottom center;
+}
+
+.gauge .holder {
+    position: absolute;
+    background: var(--gauge-color);
+    width: 16px;
+    height: 16px;
+    top: calc(var(--gauge-width)/2 - var(--indicator-height));
+    border-radius: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 5px 1px #999;
+}
